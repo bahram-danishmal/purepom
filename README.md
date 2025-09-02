@@ -2,7 +2,7 @@
 
 PurePom is a lightweight, minimal Pomodoro timer inspired by the **Pomodoro Technique** – a productivity method that uses focused work sessions followed by short breaks to improve concentration and reduce mental fatigue.  
 
-You can access the live version here: [https://purepom.webpexel.com/](https://purepom.webpexel.com/)  
+You can access the live version [here](https://purepom.webpexel.com/)  !
 
 ---
 

@@ -1,0 +1,245 @@
+/* Reset and Base Layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  background: #f0f0f3;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background 0.3s ease;
+}
+
+.container {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 320px;
+  position: relative;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Circle Timer */
+.circle-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px;
+}
+
+.timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.progress-ring-bg,
+.progress-ring-fill {
+  fill: none;
+  transition: stroke-dashoffset 0.5s ease;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.progress-ring-fill {
+  stroke-dasharray: 565.48;
+  stroke-dashoffset: 0;
+}
+
+/* Buttons */
+.buttons button {
+  background: #007aff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 8px;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.buttons button:hover {
+  background: #005ecb;
+  transform: scale(1.05);
+}
+
+/* Duration Selectors */
+.duration-settings {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.duration-settings label select {
+  margin-left: 5px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.session-label {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #1a1a1a;
+  color: #eee;
+}
+
+body.dark .container {
+  background: #2c2c2e;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .progress-ring-bg {
+  stroke: #444;
+}
+
+body.dark .progress-ring-fill,
+body.dark .buttons button {
+  background: #007aff;
+}
+
+body.dark .buttons button:hover {
+  background: #005ecb;
+}
+
+body.dark .duration-settings label select {
+  background: #444;
+  color: #fff;
+  border-color: #666;
+}
+
+body.dark .session-label {
+  color: #aaa;
+}
+
+/* Dark Mode Toggle */
+.toggle-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #007aff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* History Panel */
+.history-panel {
+  position: fixed;
+  right: -320px;
+  top: 0;
+  height: 100%;
+  width: 300px;
+  background: white;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: right 0.3s ease;
+  z-index: 10;
+}
+
+.history-panel.show {
+  right: 0;
+}
+
+body.dark .history-panel {
+  background: #2c2c2e;
+  color: #eee;
+  border-color: #444;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+#historyList li {
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 6px;
+}
+
+body.dark #historyList li {
+  border-color: #555;
+}
+
+.history-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #007aff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 11;
+  transition: background 0.2s ease;
+}
+
+.history-toggle:hover {
+  background: #005ecb;
+}

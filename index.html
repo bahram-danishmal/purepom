@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PurePom – Minimal Pomodoro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="Pomodoro-Icon.png">
+</head>
+<body>
+  <div class="container">
+    <!--dark mode toggle switch-->
+    <div class="toggle-wrapper">
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <h1>PurePom</h1>
+
+    <!--timer circle-->
+    <div class="circle-wrapper">
+      <svg class="progress-ring" width="200" height="200">
+        <circle class="progress-ring-bg" stroke="#e6e6e6" stroke-width="10" fill="transparent" r="90" cx="100" cy="100" />
+        <circle class="progress-ring-fill" stroke="#007aff" stroke-width="10" fill="transparent" r="90" cx="100" cy="100" />
+      </svg>
+      <div class="timer" id="timer">25:00</div>
+    </div>
+
+    <!--focus and break options-->
+    <div class="controls">
+      <div class="duration-settings">
+        <label>
+          Focus:
+          <select id="focusDuration">
+            <option value="15">15 min</option>
+            <option value="25" selected>25 min</option>
+            <option value="45">45 min</option>
+          </select>
+        </label>
+
+        <label>
+          Break:
+          <select id="breakDuration">
+            <option value="5" selected>5 min</option>
+            <option value="10">10 min</option>
+            <option value="15">15 min</option>
+          </select>
+        </label>
+      </div>
+
+      <!--buttons-->
+      <div class="buttons">
+        <button id="toggle">Start</button>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+
+    <!--focus and break label-->
+    <p class="session-label" id="sessionLabel">Focus Time</p>
+  </div>
+
+  <!--sidebar histroy panel-->
+  <div class="history-panel" id="historyPanel">
+    <h2>Session History</h2>
+    <ul id="historyList"></ul>
+  </div>
+
+  <!--sidebar toggle button-->
+  <button class="history-toggle" id="toggleHistory">📜 History</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
